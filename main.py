@@ -55,6 +55,7 @@ def name():
                     break
     student_selected()
     
+
 def student_selected():
     file = file_name()
     with open(f'{file}') as f:
@@ -99,5 +100,6 @@ countdown.pack(pady=20)
 
 quit_button = ttk.Button(root, text="Quit", command=root.destroy)
 quit_button.pack(side="bottom", fill='both', expand=True)
+
 
 root.mainloop()
