@@ -44,6 +44,24 @@ def name():
                 random_name_var.set(selected_row)
                 root.update()
                 time.sleep(.1)
+        while count < 10:
+            count = count + 1
+            with open(f'{file}') as f:
+                reader = csv.reader(f)
+                selected_row = random.choice(list(reader))
+                print(selected_row)
+                random_name_var.set(selected_row)
+                root.update()
+                time.sleep(.2)
+        while count < 5:
+            count = count + 1
+            with open(f'{file}') as f:
+                reader = csv.reader(f)
+                selected_row = random.choice(list(reader))
+                print(selected_row)
+                random_name_var.set(selected_row)
+                root.update()
+                time.sleep(.4)
 
 
 
