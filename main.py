@@ -55,13 +55,12 @@ def name():
                     break
     student_selected()
     
+
 def student_selected():
     file = file_name()
     with open(f'{file}') as f:
         reader = csv.reader(f)
         data = list(reader)
-        print(data)
-        print('##################')
         selected_student = random.choice(data)
         if selected_student not in past_selected_students:
             print(selected_student)
@@ -73,20 +72,6 @@ def student_selected():
 
         else:
             student_selected()
-        
-
-    
-       # print('##################')
-    '''
-    for selected_student in reader:
-        
-        reader.remove(selected_student)
-        past_selected_students.pop(0)
-        
-        
-        print(past_selected_students)
-        root.update()
-            '''
        
 
 
@@ -115,5 +100,6 @@ countdown.pack(pady=20)
 
 quit_button = ttk.Button(root, text="Quit", command=root.destroy)
 quit_button.pack(side="bottom", fill='both', expand=True)
+
 
 root.mainloop()
