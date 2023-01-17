@@ -5,6 +5,8 @@ import csv
 import random
 import time
 
+past_selected_students = ['Student 1', 'Student 2', 'Student 3', 'Student 4', 'Student 5']
+selection_list = []
 
 def file_name():
     if (var_9a.get() == 1) & (var_9b.get() == 0):
@@ -35,16 +37,57 @@ def name():
         random_name_var.set(selected_row)
         root.update()
     elif file == 'ClassA.csv' or 'ClassB.csv':
-        while count < 15:
+        while True:
             count = count + 1
             with open(f'{file}') as f:
                 reader = csv.reader(f)
                 selected_row = random.choice(list(reader))
-                print(selected_row)
+                #print(selected_row)
                 random_name_var.set(selected_row)
                 root.update()
-                time.sleep(.1)
+                if count < 10:
+                    time.sleep(.1)
+                elif count < 17:
+                    time.sleep(.3)
+                elif count < 20:
+                    time.sleep(.6)
+                else:
+                    break
+    student_selected()
+    
+def student_selected():
+    file = file_name()
+    with open(f'{file}') as f:
+        reader = csv.reader(f)
+        data = list(reader)
+        print(data)
+        print('##################')
+        selected_student = random.choice(data)
+        if selected_student not in past_selected_students:
+            print(selected_student)
+            random_name_var.set(selected_student)
+            past_selected_students.append(selected_student)
+            past_selected_students.pop(0)
+            print(past_selected_students)
+            root.update()
 
+        else:
+            student_selected()
+        
+
+    
+       # print('##################')
+    '''
+    for selected_student in reader:
+        
+        reader.remove(selected_student)
+        past_selected_students.pop(0)
+        
+        
+        print(past_selected_students)
+        root.update()
+            '''
+       
 
 
 root = tk.Tk()
