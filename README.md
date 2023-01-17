@@ -5,3 +5,6 @@ Development ideas:
   - Random selection not to pick a student that has previously been selected
   - Scroll through names slower as it gets closer to picking a name
   - Play sound effects for individual students once they have been selected.
+  - Countdown timer for students to answer the question by
+  _________________________________________________________
+  
