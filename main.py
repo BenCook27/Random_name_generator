@@ -60,8 +60,6 @@ def student_selected():
     with open(f'{file}') as f:
         reader = csv.reader(f)
         data = list(reader)
-        print(data)
-        print('##################')
         selected_student = random.choice(data)
         if selected_student not in past_selected_students:
             print(selected_student)
@@ -73,20 +71,6 @@ def student_selected():
 
         else:
             student_selected()
-        
-
-    
-       # print('##################')
-    '''
-    for selected_student in reader:
-        
-        reader.remove(selected_student)
-        past_selected_students.pop(0)
-        
-        
-        print(past_selected_students)
-        root.update()
-            '''
        
 
 
